@@ -50,9 +50,9 @@ class ReportRedis(RedisConn):
         my_pass = Mail.reportMail['password']  # 发件人邮箱密码
         my_user = Mail.reportMail['send_email_address']
         msg = MIMEText(context, 'plain', 'utf-8')
-        msg['From'] = formataddr(["FromRunoob", my_sender])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
+        msg['From'] = formataddr(["zyy", my_sender])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
         msg['To'] = formataddr(["FK", my_user])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号
-        msg['Subject'] = "菜鸟教程发送邮件测试"  # 邮件的主题，也可以说是标题
+        msg['Subject'] = "爬虫信息报表"  # 邮件的主题，也可以说是标题
 
         server = smtplib.SMTP_SSL(Mail.reportMail['smtp_host'],Mail.reportMail['smtp_port'])  # 发件人邮箱中的SMTP服务器，端口是25
         server.login(my_sender, my_pass)  # 括号中对应的是发件人邮箱账号、邮箱密码
